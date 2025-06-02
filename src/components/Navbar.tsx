@@ -2,11 +2,12 @@
 import { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
+import Logo from "@/assets/logo.png"
 
 export function NavbarDemo() {
   return (
     <div >
-      <Navbar className="top-0" />
+      <Navbar className="top-0 sticky z-10" />
     </div>
   );
 }
@@ -19,8 +20,8 @@ function Navbar({ className }: { className?: string }) {
     >
       <Menu setActive={setActive}>
 
-        <div>
-          Logo
+        <div className="w-[8em]">
+          <img className="w-full" src={Logo} alt="" />
         </div>
 
         <div className="atalhos flex grid-cols-2 gap-6">
@@ -33,7 +34,7 @@ function Navbar({ className }: { className?: string }) {
             </div>
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="Products">
-            <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+            <div className="  text-sm grid grid-cols-1 gap-10 p-4">
               <ProductItem
                 title="Algochurn"
                 href="https://algochurn.com"
